@@ -21,7 +21,3 @@ def split_ip_address(ip_list):
     return ips[1:-1]
 
 
-def get_random_ip(ips):
-    num = random.randint(0, 99)
-    return num, ips[num]
-
