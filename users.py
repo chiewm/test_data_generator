@@ -2,18 +2,15 @@
 # @Author  : chiew
 # @File    : users.py
 
-import random
 
-
-def user_generator():
+def user_generator(size):
     username = "user"
     users = []
-    for i in range(100):
+    for i in range(size):
         users.append(username + str(i))
     return users
 
 
-def get_random_user(num):
-    users = user_generator()
+def get_user(size, num):
+    users = user_generator(size)
     return users[num]
-

@@ -8,7 +8,7 @@ import random
 
 def get_op():
     operations = ['add', 'collect', 'buy', 'search']
-    num = random.randint(0, 3)
+    num = random.randint(0, len(operations)-1)
     return operations[num]
 
 
