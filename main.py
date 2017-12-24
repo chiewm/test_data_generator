@@ -7,6 +7,8 @@ import ip_address
 import goods
 import operation
 import users
+import requests
+import time
 
 
 def get_ip():
@@ -21,11 +23,18 @@ def get_data():
     while i < 5000:
         n = random.randint(0, 99)
         ip = ips[n]
-        user = users.get_user(100, n)
+
+        # user = users.get_user(100, n)
         op = operation.get_op()
         good = goods.get_good("goods3")
-        print(ip + ' ' + user + ' ' + ' ' + op + ' ' + good)
-        # sleep(1 / (num+1))
+        url = "http://localhost:52587/Default/Index"
+        headers = {'user-agent': 'my-app/0.0.1'}
+        params = {'Ip': ip, 'Operation': op, 'Good': good}
+
+        html = requests.post(url, headers=headers, params=params)
+        print(html)
+        # print(ip + ' ' + user + ' ' + ' ' + op + ' ' + good
+        time.sleep(1 / (n+1))
         i = i + 1
 
 get_data()

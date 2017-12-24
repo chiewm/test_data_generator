@@ -43,4 +43,4 @@ def get_training_data(size, n_range):
 
         i = i + 1
 
-print(get_training_data(5000, 100))  # 5000次操作,100名用户
+print(get_training_data(5000, 500))  # 5000次操作,100名用户
