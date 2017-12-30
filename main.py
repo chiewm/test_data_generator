@@ -23,18 +23,26 @@ def get_data():
     while i < 5000:
         n = random.randint(0, 99)
         ip = ips[n]
+        op = operation.get_op()
+        if n % 2:
+            good = goods.get_good("goods2")
+            print(ip + ' ' + ' ' + ' ' + op + ' ' + good + ' ' + '1')
+        else:
+            good = goods.get_good("goods1")
+            print(ip + ' ' + ' ' + ' ' + op + ' ' + good + ' ' + '1')
 
         # user = users.get_user(100, n)
-        op = operation.get_op()
-        good = goods.get_good("goods3")
-        url = "http://localhost:52587/Default/Index"
-        headers = {'user-agent': 'my-app/0.0.1'}
-        params = {'Ip': ip, 'Operation': op, 'Good': good}
 
-        html = requests.post(url, headers=headers, params=params)
-        print(html)
-        # print(ip + ' ' + user + ' ' + ' ' + op + ' ' + good
-        time.sleep(1 / (n+1))
+
+        # url = "http://localhost:52587/Home/Create"
+        # headers = {'X-Forwarded-For': ip}
+        # params = {'Operation': op, 'Good': good, 'Sex': "true"}
+        #
+        # html = requests.post(url, headers=headers, params=params)
+        # print(html)
+        # # print(ip + ' ' + user + ' ' + ' ' + op + ' ' + good
+        # time.sleep(1 / (n + 1))
         i = i + 1
+
 
 get_data()
