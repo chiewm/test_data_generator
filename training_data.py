@@ -47,8 +47,7 @@ def get_training_data(size, n_range):
         html = requests.post(url, headers=headers, params=params)
         print(html)
         # print(ip + ' ' + user + ' ' + ' ' + op + ' ' + good
-        time.sleep(1 / (n + 1))
-
+        # time.sleep(1 / (n + 1))
         i = i + 1
 
-print(get_training_data(5000, 500))  # 5000次操作,100名用户
+print(get_training_data(5000, 500))  # 5000次操作,500名用户
